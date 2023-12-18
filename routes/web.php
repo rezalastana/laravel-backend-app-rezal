@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('pages.auth.login');
 });
 
+// register
+Route::post('register', [UserController::class, 'register'])->name('register');
+
 //jika belum login maka akan diarahkan ke login
 Route::middleware(['auth'])->group(function () {
     Route::get('home', function () {
